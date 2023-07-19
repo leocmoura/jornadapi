@@ -12,21 +12,13 @@ class DepoimentosViewSet(viewsets.ModelViewSet):
     queryset = Depoimento.objects.all()
     serializer_class = DepoimentoSerializer
 
-# class DepoimentosHomeViewSet(viewsets.ModelViewSet):
-#     """Exibindo 3 depoimentos de forma randomica"""
-#     queryset = Depoimento.objects.all()
-#     serializer_class = DepoimentoSerializer
-#     allowed_methods = ['GET']
-    
-#     def list(self, request):
-#         random_depoimentos = random.sample(list(self.queryset), 3)
-#         serializer_class = DepoimentoSerializer(random_depoimentos, many=True)
-#         return Response(serializer_class.data)
-
-class DepoimentosHomeViewSet(ListAPIView):
+class DepoimentosHomeViewSet(viewsets.ModelViewSet):
     """Exibindo 3 depoimentos de forma randomica"""
-    serializer_class = DepoimentoSerializer
     queryset = Depoimento.objects.all()
+    serializer_class = DepoimentoSerializer
+    allowed_methods = ['GET']
     
-    random_depoimentos = random.samplet(list(queryset), 3)
-    return random_depoimentos
+    def list(self, request):
+        random_depoimentos = random.sample(list(self.queryset), 3)
+        serializer_class = DepoimentoSerializer(random_depoimentos, many=True)
+        return Response(serializer_class.data)

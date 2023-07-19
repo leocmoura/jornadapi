@@ -7,7 +7,7 @@ from django.conf.urls.static import static
 
 router = routers.DefaultRouter()
 router.register('depoimentos', DepoimentosViewSet, basename='Depoimentos')
-router.register('depoimentos-home', DepoimentosHomeViewSet.as_view(), basename='Depoimento-random-list')
+router.register('depoimentos-home', DepoimentosHomeViewSet, basename='Depoimento-random-list')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
