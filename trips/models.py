@@ -8,3 +8,10 @@ class Depoimento(models.Model):
     def __str__(self):
         return self.depoimento
     
+class Destino(models.Model):
+    foto = models.ImageField(blank=True)
+    nome_destino = models.CharField(max_length=30)
+    preco = models.IntegerField()
+
+    def __str__(self):
+        return self.nome_destino
