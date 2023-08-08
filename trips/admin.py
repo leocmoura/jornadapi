@@ -10,8 +10,8 @@ class Depoimentos(admin.ModelAdmin):
 admin.site.register(Depoimento, Depoimentos)
 
 class Destinos(admin.ModelAdmin):
-    list_display = ('foto', 'nome_destino', 'preco')
-    list_display_links = ('foto', 'nome_destino', 'preco')
+    list_display = ('foto_1', 'foto_2', 'nome_destino', 'preco')
+    list_display_links = ('nome_destino', 'preco')
     search_fields = ('nome_destino',)
     list_per_page = 5
 

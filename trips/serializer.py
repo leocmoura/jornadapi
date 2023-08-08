@@ -10,3 +10,4 @@ class DestinoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Destino
         fields = '__all__'
+        # exclude = ('id',)
