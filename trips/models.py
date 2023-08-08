@@ -18,12 +18,12 @@ class Destino(models.Model):
     def upload_foto_destino_1(instance, filename):
         type_file = filename.split(".")[-1]
         filename = instance.nome_destino.replace(" ", "_") + "1." + type_file
-        return f'depoimentos/{filename}'
+        return f'destinos/{filename}'
 
     def upload_foto_destino_2(instance, filename):
         type_file = filename.split(".")[-1]
         filename = instance.nome_destino.replace(" ", "_") + "2." + type_file
-        return f'depoimentos/{filename}'
+        return f'destinos/{filename}'
 
     foto_1 = models.ImageField(upload_to=upload_foto_destino_1, blank=True, null=True)
     foto_2 = models.ImageField(upload_to=upload_foto_destino_2, blank=True, null=True)
