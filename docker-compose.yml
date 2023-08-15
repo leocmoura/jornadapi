@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  databse:
+    image: postgres:13.1
+    container_name: jornadapi
+    environment:
+      - POSTGRES_DB=user
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - database:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    networks:
+      - default
+
+    # pg_admin:
+    #   image: dpage/pgadmin4:4.29
+    #   container_name: pg_admin
+    #   environment:
+    #       - PGADMIN_DEFAULT_EMAIL=leo@gmail.com
+    #       - PGADMIN_DEFAULT_PASSWORD=admin
+    #       # - SCRIPT_NAME=/pg-admin
+    #   volumes:
+    #       - pg_admin_data:/var/lib/pgadmin
+    #   networks:
+    #       - default
+
+volumes:
+  database:
+  pg_admin_data:
