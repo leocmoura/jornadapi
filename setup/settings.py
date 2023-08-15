@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'trips',
     'corsheaders',
+    'drf_yasg',
 
 ]
 
